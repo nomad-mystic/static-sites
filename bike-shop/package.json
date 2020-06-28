@@ -1,8 +1,8 @@
 {
-  "name": "static-build",
-  "version": "20.5.1",
-  "description": "This is the base for static site builds.",
-  "main": "index.js",
+  "name": "dream-bike-shop",
+  "version": "20.5.2",
+  "description": "This is the Dream City Bikes static site build.",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "development": "webpack  --config=config/webpack.dev.js --env.development",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nomads-every-sundays/static-build.git"
+    "url": "git+https://github.com/nomad-mystic/static-bike-shop.git"
   },
   "author": "Keith Murphy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nomads-every-sundays/static-build/issues"
+    "url": "https://github.com/nomad-mystic/static-bike-shop/issues"
   },
-  "homepage": "https://github.com/nomads-every-sundays/static-build#readme",
+  "homepage": "https://github.com/nomad-mystic/static-bike-shop#readme",
   "dependencies": {
     "@babel/runtime": "^7.10.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
@@ -60,7 +60,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.1.1",
-    "resolve-url-loader": "^3.1.1",
+    "sass": "^1.26.9",
     "sass-loader": "^8.0.0",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11",

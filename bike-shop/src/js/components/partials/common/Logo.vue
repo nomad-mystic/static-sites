@@ -1,7 +1,7 @@
 <template>
     <div class="logo">
         <section>
-            <a href="/">
+            <a href="/" class="logo__content">
                 <div class="logo__image">
                     <figure>
                         <img src="img/05_20_2020_logo_image_v1.png" alt="Image of a bridge and water">

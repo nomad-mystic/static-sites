@@ -1,21 +1,27 @@
+@use '../abstract/mixins';
+@use '../abstract/functions';
+@use '../base/typography';
+
 .logo {
   width: 50%;
 
-  a {
+  &__content {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: black;
   }
 
   &__image {
     img {
-      @include responsive-image();
+      @include mixins.responsive-image();
     }
   }
 
   &__text {
     h2 {
-      color: green;
-      font-family: $default-font-family;
+      color: functions.get-color('white');
+      font-family: typography.$header-font-family;
     }
   }
 }
