@@ -4,6 +4,7 @@ import '../sass/main.scss';
 import Vue from 'vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
+import Logo from './components/partials/common/Logo.vue';
 
 // Add font-awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -15,6 +16,7 @@ library.add(faUserSecret);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component(Header.name , Header);
 Vue.component(Footer.name, Footer);
+Vue.component(Logo.name, Logo);
 
 Vue.config.productionTip = false;
 

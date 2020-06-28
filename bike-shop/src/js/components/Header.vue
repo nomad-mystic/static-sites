@@ -1,7 +1,10 @@
 <template>
     <div class="Header">
-        <font-awesome-icon icon='user-secret' />
-        <a href="index.html">Home</a>
+        <header>
+            <font-awesome-icon icon='user-secret' />
+            <a href="index.html">Home</a>
+            <Logo></Logo>
+        </header>
     </div>
 </template>
 
