@@ -13,6 +13,8 @@
   }
 
   &__image {
+    width: 10rem;
+
     img {
       @include mixins.responsive-image();
     }
@@ -20,8 +22,9 @@
 
   &__text {
     h2 {
-      color: functions.get-color('white');
+      color: functions.get-color('black');
       font-family: typography.$header-font-family;
+      font-size: 1.8rem;
     }
   }
 }

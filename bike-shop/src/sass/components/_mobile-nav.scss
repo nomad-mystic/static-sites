@@ -1,0 +1,42 @@
+.mobile-nav {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transition: right .25s ease-in-out;
+  right: 0;
+  top: 0;
+
+  &__menu {
+    background: lightgreen;
+    width: 100vw;
+    height: 100vh;
+    font-size: 4rem;
+    position: relative;
+
+    .times {
+      position: absolute;
+      right: 1.25rem;
+      top: .5rem;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+
+    .item {
+      padding: 1rem 0;
+      text-align: center;
+    }
+  }
+
+  &.is-invisible {
+    visibility: hidden;
+    opacity: 0;
+    right: -100vw;
+    transition: right 1s ease-in-out;
+  }
+}

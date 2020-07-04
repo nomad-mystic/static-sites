@@ -1,11 +1,14 @@
 <template>
-    <div class="Header">
-        <header>
-            <font-awesome-icon icon='user-secret' />
-            <a href="index.html">Home</a>
-            <Logo></Logo>
-        </header>
-    </div>
+    <header>
+        <div class="header">
+            <div class="header__container">
+                <Logo></Logo>
+                <main-nav></main-nav>
+            </div>
+
+            <mobile-nav></mobile-nav>
+        </div>
+    </header>
 </template>
 
 <script>

@@ -3,7 +3,11 @@
 @use './abstract/functions';
 
 @use './base/reset';
+@use './base/base';
 @use './base/typography';
 
 @use './components/header';
 @use './components/logo';
+@use './components/main-nav';
+@use './components/mobile-nav';
+@use './components/social-media';

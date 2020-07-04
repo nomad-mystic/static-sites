@@ -1,5 +1,12 @@
 .header {
   width: 100%;
-  background: aliceblue;
-  height: 60px;
+  position: relative;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+  }
 }

@@ -8,7 +8,7 @@
                     </figure>
                 </div>
                 <div class="logo__text">
-                    <h2>Dream City <br> Bikes</h2>
+                    <h2>Dream City Bikes</h2>
                 </div>
             </a>
         </section>

@@ -1,0 +1,9 @@
+.social-media {
+  &.is-mobile {
+
+  }
+
+  &:not(&.is-mobile) {
+    display: none;
+  }
+}
