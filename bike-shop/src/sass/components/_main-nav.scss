@@ -1,0 +1,13 @@
+.main-nav {
+  &__mobile {
+    .bars {
+      font-size: 3rem;
+      padding: 1rem;
+
+      &--is-invisibile {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}

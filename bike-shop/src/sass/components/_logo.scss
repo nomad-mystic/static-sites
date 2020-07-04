@@ -1,0 +1,30 @@
+@use '../abstract/mixins';
+@use '../abstract/functions';
+@use '../base/typography';
+
+.logo {
+  width: 50%;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  &__image {
+    width: 10rem;
+
+    img {
+      @include mixins.responsive-image();
+    }
+  }
+
+  &__text {
+    h2 {
+      color: functions.get-color('black');
+      font-family: typography.$header-font-family;
+      font-size: 1.8rem;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+$header-font-family: "Space Mono", Arial, Helvetica, sans-serf;
+$default-font-family: "Open Sans", Arial, Helvetica, sans-serf;
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  src: url('../fonts/OpenSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  src: url('../fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: italic;
+  src: url('../fonts/SpaceMono-Italic.ttf') format('truetype');
+}
