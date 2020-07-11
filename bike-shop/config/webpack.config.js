@@ -7,9 +7,6 @@ const babelConfig = require('../babel.config.json');
 module.exports = {
     entry: {
         main: path.resolve(__dirname, '../src/js/main.js'),
-        vue:  'vue/dist/vue.esm.js',
-        'font-awesome-core': '@fortawesome/fontawesome-svg-core/index.es.js',
-        'font-awesome-vue': '@fortawesome/vue-fontawesome/index.es.js',
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -17,8 +14,21 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            chunks: 'async',
             minSize: 30000,
+            cacheGroups: {
+                vueCaches: {
+                    test: /[\\/]node_modules[\\/](vue)[\\/]/,
+                    name: 'vue',
+                    priority: 1,
+                    chunks: 'all',
+                },
+                lodashCaches: {
+                    test: /[\\/]node_modules[\\/](lodash)[\\/]/,
+                    name: 'lodash',
+                    priority: 2,
+                    chunks: 'all',
+                },
+            },
         },
         usedExports: true,
     },

@@ -1,18 +1,12 @@
 <template>
-    <div class="social-media" :class="{'is-mobile': mobile}">
-        <h2 class="social-media__author">Keith Murphy |</h2>
+    <div class="social-media" :class="{'social-media--is-mobile': mobile}">
+        <h2 class="social-media__author">Keith Murphy</h2>
+        <span class="social-media__spacer"> | </span>
         <ul class="social-media__icons">
-            <li>
-                <font-awesome-icon :icon="['fab', 'facebook']" />
-            </li>
-            <li>
-                <font-awesome-icon :icon="['fab', 'github']" />
-            </li>
-            <li>
-                <font-awesome-icon :icon="['fab', 'instagram']" />
-            </li>
-            <li>
-                <font-awesome-icon :icon="['fab', 'twitter']" />
+            <li v-for="(icon, index) in this.socialIcons" :key="index">
+                <a :href="icon.link" target="_blank">
+                    <font-awesome-icon :icon="['fab', icon.type]" />
+                </a>
             </li>
         </ul>
     </div>
@@ -25,7 +19,32 @@
             mobile: {
                 default: false,
                 type: Boolean,
+            },
+        },
+        data() {
+            return {
+                socialIcons: [],
             }
-        }
+        },
+        beforeMount() {
+            this.socialIcons = [
+                {
+                    type: 'facebook',
+                    link: 'https://github.com/nomad-mystic',
+                },
+                {
+                    type: 'github',
+                    link: 'https://github.com/nomad-mystic',
+                },
+                {
+                    type: 'instagram',
+                    link: 'https://github.com/nomad-mystic',
+                },
+                {
+                    type: 'twitter',
+                    link: 'https://github.com/nomad-mystic',
+                },
+            ];
+        },
     }
 </script>
