@@ -1,4 +1,6 @@
+// Style stuff
 import '../sass/main.scss';
+
 
 // Create our app
 import Vue from 'vue';
