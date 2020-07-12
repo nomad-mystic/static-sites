@@ -12,6 +12,7 @@ import Logo from './components/partials/common/Logo.vue';
 import MainNav from './components/partials/common/Main-Nav.vue';
 import MobileNav from './components/partials/common/Mobile-Nav.vue';
 import SocialMedia from './components/partials/common/Social-Media.vue';
+import Hero from './components/Hero.vue';
 
 // Font Awesome
 import { FontAwesomeIcon } from './vendor/font-awesome-load';
@@ -25,6 +26,7 @@ Vue.component(Logo.name, Logo);
 Vue.component(MainNav.name, MainNav);
 Vue.component(MobileNav.name, MobileNav);
 Vue.component(SocialMedia.name, SocialMedia);
+Vue.component(Hero.name, Hero);
 
 Vue.config.productionTip = false;
 

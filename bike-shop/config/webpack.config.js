@@ -99,7 +99,8 @@ module.exports = {
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
-                    publicPath: path.resolve(__dirname, '../dist/img'),
+                    publicPath: '/img',
+                    esModule: false,
                 },
             },
             {
