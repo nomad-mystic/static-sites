@@ -1,0 +1,21 @@
+@use './functions';
+
+@mixin responsive-image() {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+};
+
+@mixin base-anchor-styles() {
+  color: functions.get-color('black');
+  text-decoration: none;
+}
+
+@mixin absolute-cover() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

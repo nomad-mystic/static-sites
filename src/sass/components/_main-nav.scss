@@ -1,0 +1,45 @@
+@use '../vendor/include-media';
+@use '../base/typography';
+@use '../abstract/functions';
+@use '../abstract/mixins';
+
+.main-nav {
+  &__mobile {
+    margin-right: 1rem;
+
+    @include include-media.media('>tablet') {
+      display: none;
+    }
+
+    .bars {
+      font-size: 3rem;
+      padding: 1rem;
+
+      &--is-invisibile {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include include-media.media('>tablet') {
+      display: block;
+    }
+
+    ul.items {
+      display: flex;
+    }
+
+    li.item {
+      font-size: 2rem;
+
+      a {
+        @include mixins.base-anchor-styles();
+        padding: 1rem;
+      }
+    }
+  }
+}
