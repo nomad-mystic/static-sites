@@ -1,0 +1,48 @@
+@use '../vendor/include-media';
+@use '../abstract/mixins';
+@use '../base/typography';
+
+.social-media {
+  align-items: center;
+  margin: 0 auto;
+
+  &--is-mobile {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+
+    @include include-media.media('>tablet') {
+      display: none;
+    }
+
+    .social-media {
+      &__author {
+        margin: 1rem auto 2rem;
+        font-size: 2rem;
+        font-family: typography.$header-font-family;
+      }
+
+      &__icons {
+
+      }
+    }
+  }
+
+  &:not(&--is-mobile) {
+    display: none;
+
+    @include include-media.media('>tablet') {
+      display: flex;
+    }
+  }
+
+  &__icons {
+    display: flex;
+
+    a {
+      @include mixins.base-anchor-styles();
+      font-size: 3rem;
+      padding: 1rem;
+    }
+  }
+}
