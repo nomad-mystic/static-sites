@@ -1,0 +1,40 @@
+@use '../base/typography';
+@use '../abstract/functions';
+@use '../abstract/mixins';
+
+.hero {
+  position: relative;
+
+  &__image-container {
+    position: relative;
+
+    .fade {
+      @include mixins.absolute-cover();
+      background: rgba(0, 0, 0, .15);
+    }
+
+    .image {
+      @include mixins.responsive-image();
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 7%;
+    right: 5%;
+
+    .title {
+      font-family: typography.$header-font-family;
+      color: functions.get-color('white');
+      font-size: 4rem;
+      line-height: 1.2;
+    }
+
+    .sub-title {
+      font-family: typography.$header-font-family;
+      color: functions.get-color('white');
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+  }
+}
