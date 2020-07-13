@@ -21,7 +21,7 @@ jobs:
       #      MACHINETOKEN: ${{ secrets.MACHINETOKEN }}
       #      PUUID: ${{ secrets.CHANGEME_PUUID }}
       #      SITENAME: ${{ secrets.CHANGEME_SITENAME }}
-#      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,9 +30,9 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "StrictHostKeyChecking no" > ~/.ssh/config
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
-#           ssh-keyscan -p 2222 appserver.dev.$PUUID.drush.in >> ~/.ssh/known_hosts
-#          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+      #           ssh-keyscan -p 2222 appserver.dev.$PUUID.drush.in >> ~/.ssh/known_hosts
 
       - name: Setup Git
         run: |
