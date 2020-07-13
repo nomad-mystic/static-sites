@@ -43,6 +43,7 @@ jobs:
       - name: Deploy to Hostgator
         run: |
           git remote add hostgator nomad@nomadmystic.com:public_html/static-sites
+          git fetch --unshallow
           git push -u hostgator master
 
       # Runs a single command using the runners shell
