@@ -17,7 +17,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-      #      EMAIL: ${{ secrets.EMAIL }}
+      EMAIL: ${{ secrets.EMAIL }}
       #      MACHINETOKEN: ${{ secrets.MACHINETOKEN }}
       #      PUUID: ${{ secrets.CHANGEME_PUUID }}
       #      SITENAME: ${{ secrets.CHANGEME_SITENAME }}
@@ -33,6 +33,16 @@ jobs:
           # ssh-keyscan -p 2222 appserver.dev.$PUUID.drush.in >> ~/.ssh/known_hosts
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: Setup Git
+        run: |
+          git config --global user.email "$EMAIL"
+          git config --global user.name "nomad"
+
+      - name: Deploy to Hostgator
+        run: |
+          git remote add origin nomad@nomadmystic.com:public_html/static-sites
+          git push -u origin master
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
