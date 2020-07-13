@@ -16,6 +16,9 @@ jobs:
     timeout-minutes: 10
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     env:
       EMAIL: ${{ secrets.EMAIL }}
       #      MACHINETOKEN: ${{ secrets.MACHINETOKEN }}
@@ -26,6 +29,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      - name: Setup Node
+        with:
+          node-version: ${{ matrix.node-version }}
+        run: |
+          npm install
+          npm run production --if-present
+
       - name: SSH Setup
         run: |
           mkdir -p ~/.ssh
