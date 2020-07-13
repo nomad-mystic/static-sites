@@ -19,6 +19,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+
     env:
       EMAIL: ${{ secrets.EMAIL }}
       #      MACHINETOKEN: ${{ secrets.MACHINETOKEN }}
@@ -31,6 +32,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup Node
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
         run: |
