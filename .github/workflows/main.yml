@@ -42,8 +42,8 @@ jobs:
 
       - name: Deploy to Hostgator
         run: |
-          git remote add origin nomad@nomadmystic.com:public_html/static-sites
-          git push -u origin master
+          git remote add hostgator nomad@nomadmystic.com:public_html/static-sites
+          git push -u hostgator master
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
