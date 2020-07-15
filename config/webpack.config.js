@@ -5,8 +5,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const babelConfig = require('../babel.config.json');
 const { isUndefined } = require('lodash');
 
-console.log(process.env.NODE_ENV);
-
 const buildPaths = {
     distPath: path.resolve(__dirname, '../dist'),
     buildPath: path.resolve(__dirname, '../public'),
