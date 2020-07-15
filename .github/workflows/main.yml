@@ -68,3 +68,4 @@ jobs:
       - name: Debug
         run: |
           cd ~ && ls -al
+          $GITHUB_WORKSPACE
