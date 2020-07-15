@@ -8,17 +8,20 @@
 
 <IfModule mod_rewrite.c>
 
-    RewriteEngine On
-    RewriteBase /
-
+#    RewriteEngine On
+#    RewriteBase /
 #    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-l
-    RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
-    RewriteRule ^ %1 [L,NE,R=302]
-    RewriteRule ^(.*)$ public/index.html?$1 [L,QSA]
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteCond %{REQUEST_FILENAME} !-l
 
+#    RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+#    RewriteRule ^ %1 [L,NE,R=302]
+#    RewriteRule ^(.*)$ public/index.html?$1 [L,QSA]
+
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 
 # Always use https for secure connections
