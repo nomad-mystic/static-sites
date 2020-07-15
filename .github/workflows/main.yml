@@ -62,7 +62,7 @@ jobs:
       - name: Commit public
         run: |
           git add ./public
-          git commit -m "Add public built folder"
+          git commit -m "Add public folder to master branch"
 
       - name: Deploy to Hostgator
         run: |
