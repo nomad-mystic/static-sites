@@ -1,7 +1,7 @@
 {
-  "name": "dream-bike-shop",
+  "name": "master-site-for-static-sites",
   "version": "20.5.2",
-  "description": "This is the Dream City Bikes static site build.",
+  "description": "Main Site for Nomad Mystic Static Site Builds.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,9 +16,9 @@
   "author": "Keith Murphy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nomad-mystic/static-bike-shop/issues"
+    "url": "https://github.com/nomad-mystic/static-sites/issues"
   },
-  "homepage": "https://github.com/nomad-mystic/static-bike-shop#readme",
+  "homepage": "https://github.com/nomad-mystic/static-sites#readme",
   "dependencies": {
     "@babel/runtime": "^7.10.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
