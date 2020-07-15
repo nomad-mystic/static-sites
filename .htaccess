@@ -5,48 +5,15 @@
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
 
-
+# @link https://stackoverflow.com/questions/22420405/how-to-redirect-from-root-folder-to-public-folder-in-laravel
 <IfModule mod_rewrite.c>
 
-#    RewriteEngine On
-#    RewriteBase /
-#    RewriteRule ^index\.html$ - [L]
-#    RewriteCond %{REQUEST_FILENAME} !-f
-#    RewriteCond %{REQUEST_FILENAME} !-d
-#    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteEngine On
+    RewriteCond %{THE_REQUEST} public/
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^public/(.*) https://nomadslittlebrother.com/$1 [R=301,L]
 
-#    RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
-#    RewriteRule ^ %1 [L,NE,R=302]
-#    RewriteRule ^(.*)$ public/index.html?$1 [L,QSA]
+    RewriteCond %{REQUEST_URI} !public/
+    RewriteRule ^(.*)$ /public/$1 [L]
 
-#    RewriteEngine on
-#    RewriteCond %{REQUEST_URI} !^public
-#    RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
-
-# Always use https for secure connections
-# Replace 'www.example.com' with your domain name
-# (as it appears on your SSL certificate)
-#RewriteEngine On
-#RewriteCond %{SERVER_PORT} 80
-#RewriteRule ^(.*)$ https://nomadslittlebrother.com/$1 [R=301,L]
-
-RewriteEngine On
-
-RewriteCond %{THE_REQUEST} public/
-RewriteRule ^public/(.*) https://nomadslittlebrother.com/$1 [R=301,L]
-
-RewriteCond %{REQUEST_URI} !public/
-RewriteRule ^(.*)$ /public/$1 [L]
-
-#DirectoryIndex public/index.html
-#RewriteEngine On
-#
-#RewriteRule ^/?$ public/ [L]
-##RewriteRule ^index\.html$ - [L]
-#
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME} !-l
-#
-#RewriteRule ^(.+)$ public/?path=$1 [L,QSA]
