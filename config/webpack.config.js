@@ -9,8 +9,8 @@ console.log(process.env.NODE_ENV);
 
 const buildPaths = {
     distPath: path.resolve(__dirname, '../dist'),
-    buildPath: path.resolve(__dirname, '../build'),
-    destinationFolder: isUndefined(process.env.NODE_ENV) ? 'dist' : 'build',
+    buildPath: path.resolve(__dirname, '../public'),
+    destinationFolder: isUndefined(process.env.NODE_ENV) ? 'dist' : 'public',
 };
 
 module.exports = {
