@@ -59,6 +59,11 @@ jobs:
           git config --global user.name "nomad"
           echo git remote -v
 
+      - name: Commit public
+        run: |
+          git add ./public
+          git commit -m "Add public built folder"
+
       - name: Deploy to Hostgator
         run: |
           git remote add hostgator nomad@nomadmystic.com:public_html/static-sites
