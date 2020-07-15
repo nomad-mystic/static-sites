@@ -64,3 +64,7 @@ jobs:
           git remote add hostgator nomad@nomadmystic.com:public_html/static-sites
           git fetch --unshallow
           git push --force -u hostgator master
+
+      - name: Debug
+        run: |
+          cd ~ && ls -al
