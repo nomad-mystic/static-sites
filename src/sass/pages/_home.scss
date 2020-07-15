@@ -1,0 +1,42 @@
+@use '../abstract/functions';
+@use '../base/typography';
+@use '../vendor/include-media';
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    color: functions.get-color('white');
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 1.5rem;
+        font-family: typography.$default-font-family;
+        font-weight: 700;
+
+        @include include-media.media('>tablet') {
+            font-size: 3.5rem;
+        }
+
+        @include include-media.media('>desktop') {
+            font-size: 4.5rem;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-family: typography.$default-font-family;
+        font-weight: 400;
+
+        @include include-media.media('>desktop') {
+            font-size: 3rem;
+        }
+    }
+
+    a {
+        color: functions.get-color('white');
+    }
+}
