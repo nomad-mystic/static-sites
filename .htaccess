@@ -16,4 +16,6 @@
     RewriteCond %{REQUEST_URI} !public/
     RewriteRule ^(.*)$ /public/$1 [L]
 
+    AddType text/css .css
+    AddType text/javascript .js
 </IfModule>
