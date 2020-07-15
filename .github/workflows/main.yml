@@ -69,3 +69,4 @@ jobs:
         run: |
           cd ~ && ls -al
           cd $GITHUB_WORKSPACE && ls -al
+          cd $GITHUB_WORKSPACE && cd public && ls -al
