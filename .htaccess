@@ -31,14 +31,22 @@
 #RewriteCond %{SERVER_PORT} 80
 #RewriteRule ^(.*)$ https://nomadslittlebrother.com/$1 [R=301,L]
 
-DirectoryIndex public/index.html
 RewriteEngine On
 
-RewriteRule ^/?$ public/ [L]
-#RewriteRule ^index\.html$ - [L]
+RewriteCond %{THE_REQUEST} public/
+RewriteRule ^public/(.*) https://nomadslittlebrother.com/$1 [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule ^(.*)$ /public/$1 [L]
 
-RewriteRule ^(.+)$ public/?path=$1 [L,QSA]
+#DirectoryIndex public/index.html
+#RewriteEngine On
+#
+#RewriteRule ^/?$ public/ [L]
+##RewriteRule ^index\.html$ - [L]
+#
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-l
+#
+#RewriteRule ^(.+)$ public/?path=$1 [L,QSA]
