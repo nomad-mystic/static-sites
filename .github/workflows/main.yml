@@ -43,7 +43,7 @@ jobs:
 
       - name: Build Sites
         run: |
-          npm run production
+          npm run deploy
 
       - name: SSH Setup
         run: |
@@ -64,7 +64,3 @@ jobs:
           git remote add hostgator nomad@nomadmystic.com:public_html/static-sites
           git fetch --unshallow
           git push --force -u hostgator master
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
