@@ -4,7 +4,7 @@
             <div class="hero__image-container">
                 <div class="fade"></div>
                 <figure>
-                    <img src="../../img/06_09_2020_hero_v2.jpg" alt="A blue bike leaned up to a stack of wood" class="image" >
+                    <img src="img/06_09_2020_hero_v2.jpg" alt="A blue bike leaned up to a stack of wood" class="image" >
                 </figure>
             </div>
             <div class="hero__content">
