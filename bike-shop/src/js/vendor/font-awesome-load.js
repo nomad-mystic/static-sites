@@ -9,6 +9,8 @@ import {
     faFacebook,
     faInstagram,
     faTwitter,
+    faStar,
+    faArrowCircleRight,
 } from './font-awesome-icons';
 
 library.add(
@@ -17,7 +19,9 @@ library.add(
     faGithub,
     faFacebook,
     faInstagram,
-    faTwitter
+    faTwitter,
+    faStar,
+    faArrowCircleRight
 );
 
 export {

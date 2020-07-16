@@ -1,0 +1,147 @@
+@use '../abstract/mixins';
+@use '../base/typography';
+@use '../vendor/include-media';
+
+.highlights {
+  position: relative;
+
+  &--control-left {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    transform: translateY(-50%) rotate(180deg);
+
+    svg {
+      font-size: 4rem;
+    }
+  }
+
+  &--control-right {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+
+    svg {
+      font-size: 4rem;
+    }
+  }
+
+  &--cards {
+    width: 90%;
+    margin: 0 auto;
+    
+    @include include-media.media('>tablet') {
+      display: flex;
+    }
+
+    > div:nth-child(n+2) {
+      display: none;
+
+      @include include-media.media('>tablet') {
+        display: block;
+      }
+    }
+  }
+
+  &--card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    margin: 8% auto;
+    padding: 4%;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+    font-family: typography.$default-font-family;
+
+    @include include-media.media('>tablet') {
+      width: 90%;
+    }
+
+    .image {
+      img {
+        @include mixins.responsive-image();
+      }
+    }
+
+    .title {
+      font-size: 1.8rem;
+      margin: 5% auto 0;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      margin: 5% auto;
+    }
+
+    .stars {
+      width: 82%;
+
+      .star {
+        font-size: 2rem;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-evenly;
+
+        svg {
+          path {
+            stroke: black;
+            stroke-width: 4rem;
+            stroke-opacity: 1;
+            fill: none;
+          }
+        }
+
+        &.is-1 {
+          > div:nth-child(-n+1) {
+            svg {
+              path {
+                fill: gold;
+              }
+            }
+          }
+        }
+
+        &.is-2  {
+          > div:nth-child(-n+2) {
+            svg {
+              path {
+                fill: gold;
+              }
+            }
+          }
+        }
+
+        &.is-3 {
+          > div:nth-child(-n+3) {
+            svg {
+              path {
+                fill: gold;
+              }
+            }
+          }
+        }
+
+        &.is-4 {
+          > div:nth-child(-n+4) {
+            svg {
+              path {
+                fill: gold;
+              }
+            }
+          }
+        }
+
+        &.is-5 {
+          > div:nth-child(-n+5) {
+            svg {
+              path {
+                fill: gold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
