@@ -12,6 +12,9 @@ const buildPaths = {
     destinationFolder: isUndefined(process.env.NODE_ENV) ? 'dist' : 'public',
 };
 
+console.log(buildPaths.distPath);
+console.log(path.resolve(__dirname, `../${buildPaths.destinationFolder}/img`));
+
 module.exports = {
     entry: {
         main: path.resolve(__dirname, '../src/js/main.js'),
@@ -107,7 +110,8 @@ module.exports = {
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
-                    publicPath: '/img',
+                    publicPath: isUndefined(process.env.NODE_ENV) ? buildPaths.distPath : buildPaths.buildPath,
+                    outputPath: isUndefined(process.env.NODE_ENV) ? buildPaths.distPath : buildPaths.buildPath,
                     esModule: false,
                 },
             },
