@@ -45,8 +45,7 @@ jobs:
 
       - name: Build sub-sites
         run: |
-          cd "$GITHUB_WORKSPACE/$BIKE_SITE" && ls -al
-#          npm run deploy
+          cd "$GITHUB_WORKSPACE/$BIKE_SITE" && npm run deploy
 
       - name: SSH Setup
         run: |
