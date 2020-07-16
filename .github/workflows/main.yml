@@ -22,9 +22,7 @@ jobs:
 
     env:
       EMAIL: ${{ secrets.EMAIL }}
-      #      MACHINETOKEN: ${{ secrets.MACHINETOKEN }}
-      #      PUUID: ${{ secrets.CHANGEME_PUUID }}
-      #      SITENAME: ${{ secrets.CHANGEME_SITENAME }}
+      BIKE_SITE: "bike-shop"
       SSH_AUTH_SOCK: /tmp/ssh_agent.sock
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -41,9 +39,14 @@ jobs:
         run: |
           npm install
 
-      - name: Build Sites
+      - name: Build master site
         run: |
           npm run deploy
+
+      - name: Build sub-sites
+        run: |
+          cd $GITHUB_WORKSPACE${{ BIKE_SITE }} && ls -al
+#          npm run deploy
 
       - name: SSH Setup
         run: |
@@ -51,7 +54,6 @@ jobs:
           echo "StrictHostKeyChecking no" > ~/.ssh/config
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
-      #           ssh-keyscan -p 2222 appserver.dev.$PUUID.drush.in >> ~/.ssh/known_hosts
 
       - name: Setup Git
         run: |
@@ -59,10 +61,10 @@ jobs:
           git config --global user.name "nomad"
           echo git remote -v
 
-      - name: Commit public
+      - name: Commit master
         run: |
-          git add ./public
-          git commit -m "Add public folder to master branch"
+          git add -A
+          git commit -m "Commit changes to master branch"
 
       - name: Deploy to Hostgator
         run: |
