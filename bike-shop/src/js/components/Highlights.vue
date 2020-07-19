@@ -47,20 +47,11 @@
         data() {
             return {
                 highlightsData: [],
-                bikes: '',
                 numberOfStars: 5,
-            }
+            };
         },
         created() {
             this.highlightsData = highlightsData;
         },
-        methods: {
-
-        },
-        mounted() {
-            this.bikes = JSON.parse(JSON.stringify(this.highlightsData));
-
-            console.log(highlightsData.data);
-        },
-    }
+    };
 </script>

@@ -1,0 +1,12 @@
+@use '../base/typography';
+
+.quote {
+  margin: 5rem auto;
+  width: 85%;
+
+  .text {
+    font-family: typography.$default-font-light-italic-family;
+    font-size: 3.6rem;
+    font-style: italic;
+  }
+}
