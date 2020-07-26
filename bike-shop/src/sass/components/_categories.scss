@@ -1,0 +1,34 @@
+@use '../abstract/mixins';
+@use '../base/typography';
+@use '../abstract/functions';
+
+.categories {
+  width: 90%;
+  margin: 0 auto;
+
+  &__fade {
+    @include mixins.absolute-cover();
+    background: rgba(0, 0, 0, 0.30);
+  }
+
+  &__category {
+    position: relative;
+    margin: 2rem auto;
+  }
+
+  &__title {
+    font-family: typography.$header-font-family;
+    color: functions.get-color('white');
+    font-size: 4.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__image {
+    .image {
+      @include mixins.responsive-image();
+    }
+  }
+}
