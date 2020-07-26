@@ -2,6 +2,8 @@
 @use '../base/typography';
 @use '../abstract/functions';
 
+
+
 .categories {
   width: 90%;
   margin: 0 auto;
@@ -27,6 +29,7 @@
   }
 
   &__image {
+
     .image {
       @include mixins.responsive-image();
     }
