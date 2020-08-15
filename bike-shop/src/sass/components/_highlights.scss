@@ -31,14 +31,27 @@
     width: 90%;
     margin: 0 auto;
     
-    @include include-media.media('>tablet') {
+    @include include-media.media('>phone-landscape') {
       display: flex;
+      width: 85%;
+    }
+
+    > div {
+      display: none;
+    }
+
+    > div:first-child {
+      display: block;
+    }
+
+    > div:nth-child(n+4) {
+      @include include-media.media('>tablet') {
+        display: block;
+      }
     }
 
     > div:nth-child(n+2) {
-      display: none;
-
-      @include include-media.media('>tablet') {
+      @include include-media.media('>desktop') {
         display: block;
       }
     }
@@ -54,7 +67,7 @@
     box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
     font-family: typography.$default-font-family;
 
-    @include include-media.media('>tablet') {
+    @include include-media.media('>phone-landscape') {
       width: 90%;
     }
 
