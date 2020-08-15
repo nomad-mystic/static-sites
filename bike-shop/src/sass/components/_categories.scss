@@ -1,12 +1,18 @@
 @use '../abstract/mixins';
 @use '../base/typography';
 @use '../abstract/functions';
-
-
+@use '../vendor/include-media';
 
 .categories {
   width: 90%;
   margin: 0 auto;
+  max-width: 1200px;
+
+  @include include-media.media('>tablet') {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   &__fade {
     @include mixins.absolute-cover();
@@ -16,12 +22,25 @@
   &__category {
     position: relative;
     margin: 2rem auto;
+
+    @include include-media.media('>tablet') {
+      width: 48%;
+
+      &:nth-child(odd) {
+        margin: 2% 2% 2% 0;
+      }
+
+      &:nth-child(even) {
+        margin: 2% 0 2% 2%;
+      }
+    }
   }
 
   &__title {
     font-family: typography.$header-font-family;
     color: functions.get-color('white');
     font-size: 4.6rem;
+    text-transform: capitalize;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -29,6 +48,7 @@
   }
 
   &__image {
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,.25);
 
     .image {
       @include mixins.responsive-image();

@@ -33,12 +33,25 @@
     
     @include include-media.media('>tablet') {
       display: flex;
+      width: 85%;
+    }
+
+    > div {
+      display: none;
+    }
+
+    > div:first-child {
+      display: block;
+    }
+
+    > div:nth-child(n+4) {
+      @include include-media.media('>tablet') {
+        display: block;
+      }
     }
 
     > div:nth-child(n+2) {
-      display: none;
-
-      @include include-media.media('>tablet') {
+      @include include-media.media('>desktop') {
         display: block;
       }
     }
