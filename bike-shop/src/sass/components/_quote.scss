@@ -3,6 +3,7 @@
 .quote {
   margin: 5rem auto;
   width: 85%;
+  max-width: 700px;
 
   .text {
     font-family: typography.$default-font-light-italic-family;
