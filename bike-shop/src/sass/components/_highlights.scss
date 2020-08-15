@@ -31,7 +31,7 @@
     width: 90%;
     margin: 0 auto;
     
-    @include include-media.media('>phone-landscape') {
+    @include include-media.media('>tablet') {
       display: flex;
       width: 85%;
     }
@@ -67,7 +67,7 @@
     box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
     font-family: typography.$default-font-family;
 
-    @include include-media.media('>phone-landscape') {
+    @include include-media.media('>tablet') {
       width: 90%;
     }
 
