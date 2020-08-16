@@ -4,8 +4,10 @@
 
 .highlights {
   position: relative;
+  margin: 0 auto;
+  max-width: 1440px;
 
-  &--control-left {
+  &__control-left {
     position: absolute;
     top: 50%;
     left: 1%;
@@ -16,7 +18,7 @@
     }
   }
 
-  &--control-right {
+  &__control-right {
     position: absolute;
     top: 50%;
     right: 1%;
@@ -27,7 +29,7 @@
     }
   }
 
-  &--cards {
+  &__cards {
     width: 90%;
     margin: 0 auto;
     
@@ -57,7 +59,7 @@
     }
   }
 
-  &--card {
+  &__card {
     display: flex;
     flex-direction: column;
     align-items: center;
