@@ -1,14 +1,14 @@
 <template>
     <section>
         <div class="highlights">
-            <div class="highlights--control-left">
+            <div class="highlights__control-left">
                 <font-awesome-icon :icon="['fas', 'arrow-circle-right']" />
             </div>
             <section>
-                <div class="highlights--cards">
+                <div class="highlights__cards">
                     <div v-for="(bike, index) in this.highlightsData.data" :key="index">
                         <section>
-                            <div class="highlights--card">
+                            <div class="highlights__card">
                                 <div class="image">
                                     <figure>
                                         <img :src="bike.img" :alt="bike.alt">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </section>
-            <div class="highlights--control-right">
+            <div class="highlights__control-right">
                 <font-awesome-icon :icon="['fas', 'arrow-circle-right']" />
             </div>
         </div>

@@ -1,6 +1,7 @@
 @use '../base/typography';
 @use '../abstract/functions';
 @use '../abstract/mixins';
+@use '../vendor/include-media';
 
 .hero {
   position: relative;
@@ -28,6 +29,14 @@
       color: functions.get-color('white');
       font-size: 4rem;
       line-height: 1.2;
+
+      @include include-media.media('>tablet') {
+        font-size: 6rem;
+      }
+
+      @include include-media.media('>desktop') {
+        font-size: 8rem;
+      }
     }
 
     .sub-title {
@@ -35,6 +44,14 @@
       color: functions.get-color('white');
       font-size: 2.5rem;
       line-height: 1.2;
+
+      @include include-media.media('>tablet') {
+        font-size: 3rem;
+      }
+
+      @include include-media.media('>desktop') {
+        font-size: 4rem;
+      }
     }
   }
 }
