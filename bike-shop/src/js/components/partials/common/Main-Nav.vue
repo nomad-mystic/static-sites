@@ -8,10 +8,10 @@
         </div>
         <nav class="main-nav__menu">
             <ul class="items">
-                <li class="item"><a href="#">Home</a></li>
-                <li class="item"><a href="#">Shop</a></li>
-                <li class="item"><a href="#">About</a></li>
-                <li class="item"><a href="#">Contact</a></li>
+                <li class="item"><a href="https://nomadslittlebrother.com/">Home</a></li>
+                <li class="item"><a href="https://github.com/nomad-mystic" target="_blank">Shop</a></li>
+                <li class="item"><a href="https://github.com/nomad-mystic" target="_blank">About</a></li>
+                <li class="item"><a href="https://github.com/nomad-mystic" target="_blank">Contact</a></li>
             </ul>
         </nav>
     </div>

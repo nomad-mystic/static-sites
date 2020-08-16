@@ -6,16 +6,16 @@
         <nav class="mobile-nav__menu">
             <ul>
                 <li class="item">
-                    <a href="#">Home</a>
+                    <a href="https://nomadslittlebrother.com/">Home</a>
                 </li>
                 <li class="item">
-                    <a href="#">Shop</a>
+                    <a href="https://github.com/nomad-mystic" target="_blank">Shop</a>
                 </li>
                 <li class="item">
-                    <a href="#">About</a>
+                    <a href="https://github.com/nomad-mystic" target="_blank">About</a>
                 </li>
                 <li class="item">
-                    <a href="#">Contact</a>
+                    <a href="https://github.com/nomad-mystic" target="_blank">Contact</a>
                 </li>
             </ul>
         </nav>
